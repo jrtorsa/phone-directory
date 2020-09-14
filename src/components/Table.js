@@ -10,6 +10,12 @@ const Table = () => {
     address: ""
   });
 
+  const [addRow, setAddRow] = useState([]);
+
+  const addNewRow = () => {
+    return;
+  };
+
   return (
     <div>
       <table>
