@@ -3,31 +3,29 @@ import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 
 const Table = () => {
-  const [addNewcontact, setAddNewContact] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    address: ""
-  });
+  const [addNewcontact, setAddNewContact] = useState([
+    {
+      name: null,
+      phone: null,
+      email: null,
+      address: null
+    }
+  ]);
 
-  const [addRow, setAddRow] = useState([]);
-
-  const addNewRow = () => {
-    return;
+  const addNewRow = (newContact) => {
+    setAddNewContact((addNewcontact) => [...addNewcontact, newContact]);
   };
-
   return (
     <div>
       <table>
         <TableHeader />
         <tbody></tbody>
         <tfoot>
-          <tr>
-            <TableRow
-              addNewcontact={addNewcontact}
-              setAddNewContact={setAddNewContact}
-            />
-          </tr>
+          <TableRow
+            addNewcontact={addNewcontact}
+            setAddNewContact={setAddNewContact}
+            addNewRow={addNewRow}
+          />
         </tfoot>
       </table>
     </div>
