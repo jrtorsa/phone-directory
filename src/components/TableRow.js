@@ -18,9 +18,9 @@ const TableRow = ({
   };
   return (
     <>
-      {newRow.map((r, i) => {
+      {newRow.map((addNewcontact, i) => {
         return (
-          <tr key={id + i}>
+          <tr key={addNewcontact + i}>
             <td>
               <input
                 name="name"

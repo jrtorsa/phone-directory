@@ -13,12 +13,13 @@ const Table = () => {
   const [addButton, setAddButton] = useState(true);
 
   const { id, name, phone, email, address } = addNewcontact;
-  const [newRow, setNewRow] = useState([{ id, name, phone, email, address }]);
+  const [newRow, setNewRow] = useState([]);
 
   const addNewRow = (e) => {
     e.preventDefault();
-    setNewRow((addNewcontact) => [...addNewcontact, newRow]);
+    setNewRow((newRow) => [newRow.concat(addNewcontact)]);
     setAddButton(false);
+    setAddButton(true);
   };
   return (
     <div>
