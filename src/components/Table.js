@@ -3,20 +3,20 @@ import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 
 const Table = () => {
-  const [addNewcontact, setAddNewContact] = useState([
-    {
-      name: null,
-      phone: null,
-      email: null,
-      address: null
-    }
-  ]);
+  const [addNewcontact, setAddNewContact] = useState({
+    name: null,
+    phone: null,
+    email: null,
+    address: null
+  });
 
   const [newRow, setNewRow] = useState([addNewcontact]);
   const [addButton, setAddButton] = useState(true);
 
-  const addNewRow = () => {
-    setNewRow((addNewcontact) => [...addNewcontact, addNewcontact]);
+  const addNewRow = (e) => {
+    e.preventDefault();
+    setNewRow((addNewcontact) => [...addNewcontact, newRow]);
+    setAddButton(false);
   };
   return (
     <div>
