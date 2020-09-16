@@ -12,8 +12,11 @@ const Table = () => {
     }
   ]);
 
-  const addNewRow = (newContact) => {
-    setAddNewContact((addNewcontact) => [...addNewcontact, newContact]);
+  const [newRow, setNewRow] = useState([addNewcontact]);
+  const [addButton, setAddButton] = useState(true);
+
+  const addNewRow = () => {
+    setNewRow((addNewcontact) => [...addNewcontact, addNewcontact]);
   };
   return (
     <div>
@@ -25,6 +28,8 @@ const Table = () => {
             addNewcontact={addNewcontact}
             setAddNewContact={setAddNewContact}
             addNewRow={addNewRow}
+            addButton={addButton}
+            newRow={newRow}
           />
         </tfoot>
       </table>
