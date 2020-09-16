@@ -1,10 +1,15 @@
 import React from "react";
-
-const List = () => {
+const List = ({ name, phone, email, address }) => {
   return (
-    <ul>
-      <li></li>
-    </ul>
+    <tr>
+      <td>{name}</td>
+      <td>{phone}</td>
+      <td>{email}</td>
+      <td>{address}</td>
+      <td>
+        <button>Delete</button>
+      </td>
+    </tr>
   );
 };
 

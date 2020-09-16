@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
+import List from "./List";
 
 const Table = () => {
   const [addNewcontact, setAddNewContact] = useState({
@@ -10,29 +11,26 @@ const Table = () => {
     email: "",
     address: ""
   });
-  const [addButton, setAddButton] = useState(true);
-
-  const { id, name, phone, email, address } = addNewcontact;
-  const [newRow, setNewRow] = useState([]);
+  const { name, phone, email, address } = addNewcontact;
+  const [newRow, setNewRow] = useState([{ name, phone, email, address }]);
 
   const addNewRow = (e) => {
     e.preventDefault();
-    setNewRow((newRow) => [newRow.concat(addNewcontact)]);
-    setAddButton(false);
-    setAddButton(true);
+    setNewRow((newRow) => [...newRow, addNewcontact]);
   };
   return (
     <div>
       <table>
         <TableHeader />
-        <tbody></tbody>
+        <tbody>
+          <List name={name} phone={phone} email={email} address={address} />
+        </tbody>
         <tfoot>
           <TableRow
             addNewcontact={addNewcontact}
             setAddNewContact={setAddNewContact}
-            addNewRow={addNewRow}
-            addButton={addButton}
             newRow={newRow}
+            addNewRow={addNewRow}
           />
         </tfoot>
       </table>

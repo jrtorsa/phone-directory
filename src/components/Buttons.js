@@ -1,18 +1,10 @@
 import React from "react";
 
-const Button = ({ addNewRow, addButton }) => {
+const Button = ({ addNewRow }) => {
   return (
-    <>
-      {addButton ? (
-        <td>
-          <button onClick={addNewRow}>Add &#43;</button>
-        </td>
-      ) : (
-        <td>
-          <button>Remove</button>
-        </td>
-      )}
-    </>
+    <td>
+      <button onClick={addNewRow}>Add &#43;</button>
+    </td>
   );
 };
 

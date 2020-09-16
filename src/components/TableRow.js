@@ -1,13 +1,7 @@
 import React from "react";
 import Button from "./Buttons";
 
-const TableRow = ({
-  addNewcontact,
-  setAddNewContact,
-  addNewRow,
-  addButton,
-  newRow
-}) => {
+const TableRow = ({ addNewcontact, setAddNewContact, newRow, addNewRow }) => {
   const { id, name, phone, email, address } = addNewcontact;
 
   const handleContact = (e) => {
@@ -53,7 +47,7 @@ const TableRow = ({
                 placeholder="Address"
               />
             </td>
-            <Button addNewRow={addNewRow} addButton={addButton} />
+            <Button />
           </tr>
         );
       })}
