@@ -4,14 +4,16 @@ import TableRow from "./TableRow";
 
 const Table = () => {
   const [addNewcontact, setAddNewContact] = useState({
-    name: null,
-    phone: null,
-    email: null,
-    address: null
+    id: 0,
+    name: "",
+    phone: "",
+    email: "",
+    address: ""
   });
-
-  const [newRow, setNewRow] = useState([addNewcontact]);
   const [addButton, setAddButton] = useState(true);
+
+  const { id, name, phone, email, address } = addNewcontact;
+  const [newRow, setNewRow] = useState([{ id, name, phone, email, address }]);
 
   const addNewRow = (e) => {
     e.preventDefault();
