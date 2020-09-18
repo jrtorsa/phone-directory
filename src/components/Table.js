@@ -16,14 +16,16 @@ const Table = () => {
 
   const addNewRow = (e) => {
     e.preventDefault();
-    setNewRow((newRow) => [...newRow, addNewcontact]);
+    setNewRow(() => [...newRow, addNewcontact]);
   };
   return (
     <div>
       <table>
         <TableHeader />
         <tbody>
-          <List name={name} phone={phone} email={email} address={address} />
+          {newRow.map((addNewcontact, i) => (
+            <List addNewcontact={addNewcontact} key={addNewcontact + i} />
+          ))}
         </tbody>
         <tfoot>
           <TableRow

@@ -1,5 +1,7 @@
 import React from "react";
-const List = ({ name, phone, email, address }) => {
+const List = ({ addNewcontact }) => {
+  const { name, phone, email, address } = addNewcontact;
+
   return (
     <tr>
       <td>{name}</td>
