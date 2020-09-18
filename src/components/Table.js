@@ -30,11 +30,7 @@ const Table = () => {
         <TableHeader />
         <tbody>
           {newRow.map((addNewcontact, i) => (
-            <List
-              addNewcontact={addNewcontact}
-              key={addNewcontact + i}
-              deleteRow={deleteRow}
-            />
+            <List addNewcontact={addNewcontact} key={i} deleteRow={deleteRow} />
           ))}
         </tbody>
         <tfoot>
