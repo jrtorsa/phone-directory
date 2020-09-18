@@ -1,5 +1,5 @@
 import React from "react";
-const List = ({ addNewcontact }) => {
+const List = ({ addNewcontact, deleteRow }) => {
   const { name, phone, email, address } = addNewcontact;
 
   return (
@@ -9,7 +9,7 @@ const List = ({ addNewcontact }) => {
       <td>{email}</td>
       <td>{address}</td>
       <td>
-        <button>Delete</button>
+        <button onClick={deleteRow}>Delete</button>
       </td>
     </tr>
   );

@@ -5,7 +5,6 @@ import List from "./List";
 
 const Table = () => {
   const [addNewcontact, setAddNewContact] = useState({
-    id: 0,
     name: "",
     phone: "",
     email: "",
@@ -18,13 +17,24 @@ const Table = () => {
     e.preventDefault();
     setNewRow(() => [...newRow, addNewcontact]);
   };
+
+  const deleteRow = (e) => {
+    const { id } = e.target.parentElement;
+    newRow.splice(id, 1);
+    setNewRow([...newRow]);
+  };
+
   return (
     <div>
       <table>
         <TableHeader />
         <tbody>
           {newRow.map((addNewcontact, i) => (
-            <List addNewcontact={addNewcontact} key={addNewcontact + i} />
+            <List
+              addNewcontact={addNewcontact}
+              key={addNewcontact + i}
+              deleteRow={deleteRow}
+            />
           ))}
         </tbody>
         <tfoot>

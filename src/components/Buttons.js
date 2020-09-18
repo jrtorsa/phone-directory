@@ -3,7 +3,9 @@ import React from "react";
 const Button = ({ addNewRow }) => {
   return (
     <td>
-      <button onClick={addNewRow}>Add &#43;</button>
+      <button type="submit" onClick={addNewRow}>
+        Add &#43;
+      </button>
     </td>
   );
 };
