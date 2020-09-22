@@ -10,8 +10,7 @@ const Table = () => {
     email: "",
     address: ""
   });
-  const { name, phone, email, address } = addNewcontact;
-  const [newRow, setNewRow] = useState([{ name, phone, email, address }]);
+  const [newRow, setNewRow] = useState([]);
 
   const addNewRow = (e) => {
     e.preventDefault();
