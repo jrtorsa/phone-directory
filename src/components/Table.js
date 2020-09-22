@@ -15,6 +15,7 @@ const Table = () => {
   const addNewRow = (e) => {
     e.preventDefault();
     setNewRow(() => [...newRow, addNewcontact]);
+    setAddNewContact({ name: "", phone: "", email: "", address: "" });
   };
 
   const deleteRow = (e) => {
